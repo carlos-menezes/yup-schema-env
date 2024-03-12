@@ -1,0 +1,51 @@
+{
+    "name": "yup-schema-env",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "Parse environment variables with Yup",
+    "author": "Carlos Menezes <work@carlos-menezes.com>",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "test": "jest",
+        "prepare": "husky",
+        "build": "tsc",
+        "lint": "eslint . --ext .ts"
+    },
+    "lint-staged": {
+        "**/*": "prettier --write --ignore-unknown"
+    },
+    "keywords": [
+        "yup",
+        "env",
+        "typescript"
+    ],
+    "license": "ISC",
+    "devDependencies": {
+        "@types/jest": "^29.5.12",
+        "@types/node": "^20.11.26",
+        "@typescript-eslint/eslint-plugin": "^7.2.0",
+        "@typescript-eslint/parser": "^7.2.0",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.1.0",
+        "husky": "^9.0.11",
+        "jest": "^29.7.0",
+        "lint-staged": "^15.2.2",
+        "prettier": "^3.2.5",
+        "ts-jest": "^29.1.2",
+        "typescript": "^5.4.2"
+    },
+    "dependencies": {
+        "yup": "^1.4.0"
+    },
+    "jest": {
+        "transform": {
+            "^.+\\.ts?$": "ts-jest"
+        }
+    }
+}
