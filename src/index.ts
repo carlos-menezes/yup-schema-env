@@ -4,6 +4,15 @@ type Options = {
     yupValidationOptions?: ValidateOptions
 }
 
+const coerceType = (value: string): unknown => {
+    if (value === 'true' || value === 'false') {
+        return value === 'true'
+    } else if (!isNaN(Number(value))) {
+        return Number(value)
+    }
+    return value
+}
+
 const parseEnvironment = <
     E extends Record<string, string | undefined>,
     S extends AnyObjectSchema,
@@ -17,7 +26,10 @@ const parseEnvironment = <
     const processedInput: Record<string, unknown> = {}
 
     Object.keys(environment).forEach((key) => {
-        processedInput[key] = environment[key]
+        const value = environment[key]
+        if (value !== undefined) {
+            processedInput[key] = coerceType(value)
+        }
     })
 
     return schema.validateSync(processedInput, yupValidationOptions)

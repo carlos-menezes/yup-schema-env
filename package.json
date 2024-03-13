@@ -1,7 +1,7 @@
 {
     "name": "yup-schema-env",
     "type": "module",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "Parse environment variables with Yup",
     "author": "Carlos Menezes <work@carlos-menezes.com>",
     "main": "./dist/index.js",
